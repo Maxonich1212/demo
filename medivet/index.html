@@ -1,0 +1,1039 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow"><!-- демо: не индексировать. Убрать на боевой версии -->
+<title>МедиВет — ветеринарная клиника в Петергофе</title>
+<meta name="description" content="Ветеринарная клиника МедиВет в Петергофе: терапия, УЗИ экспертного класса, дерматология, стационар и своя лаборатория. Ежедневно с 10:00 до 21:00.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="МедиВет — ветеринарная клиника в Петергофе">
+<meta property="og:description" content="Лечим с любовью. УЗИ, дерматология, стационар, анализы. Ежедневно 10–21.">
+<meta property="og:locale" content="ru_RU">
+<meta name="theme-color" content="#f2f6fa">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M18 4h20v18h20v20H38v18H18V42H0V22h18z' fill='%233f86e0'/%3E%3Ctext x='22' y='58' font-family='Arial' font-weight='900' font-size='44' fill='%23c8173f'%3EМ%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+/* ================= ТОКЕНЫ ================= */
+:root{
+  --bg:#f2f6fa;--bg-2:#e6eef7;--card:#ffffff;--ink:#0e2140;--ink-2:#34496a;--muted:#6a7c93;
+  --line:rgba(14,33,64,.1);--blue:#2b8af0;--blue-2:#62b1ff;--blue-soft:#e2efff;--red:#e8383d;--red-soft:#fde9e9;
+  --glass:rgba(255,255,255,.55);--glass-b:rgba(255,255,255,.75);--shadow:rgba(14,33,64,.18);
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --sans:"Onest","Golos Text",Inter,system-ui,sans-serif;--mono:"JetBrains Mono",ui-monospace,monospace;
+  --gut:clamp(16px,4vw,48px);color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#09131f;--bg-2:#0e1c2f;--card:#11213a;--ink:#e8f0fa;--ink-2:#c3d1e4;--muted:#8394ad;
+  --line:rgba(232,240,250,.1);--blue:#4aa2ff;--blue-soft:#132f50;--red:#ff5a5f;--red-soft:#3a181a;
+  --glass:rgba(17,33,58,.55);--glass-b:rgba(255,255,255,.12);--shadow:rgba(0,0,0,.5);color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#09131f;--bg-2:#0e1c2f;--card:#11213a;--ink:#e8f0fa;--ink-2:#c3d1e4;--muted:#8394ad;
+  --line:rgba(232,240,250,.1);--blue:#4aa2ff;--blue-soft:#132f50;--red:#ff5a5f;--red-soft:#3a181a;
+  --glass:rgba(17,33,58,.55);--glass-b:rgba(255,255,255,.12);--shadow:rgba(0,0,0,.5);color-scheme:dark}
+
+/* ================= БАЗА ================= */
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+html,body{overflow-x:clip}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.55 var(--sans);-webkit-font-smoothing:antialiased}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+button,input,select,textarea{font:inherit;color:inherit}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.wrap{width:100%;max-width:1320px;margin:0 auto;padding:0 var(--gut)}
+.micro{font:500 11px/1.5 var(--mono);letter-spacing:.08em;text-transform:uppercase}
+.muted{color:var(--muted)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border:0;border-radius:999px;cursor:pointer;
+  background:var(--blue);color:#fff;font:600 15px/1 var(--sans);text-decoration:none;position:relative;overflow:hidden;isolation:isolate;
+  box-shadow:0 12px 30px -14px color-mix(in srgb,var(--blue) 80%,transparent);transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
+.btn::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(120deg,transparent 30%,rgba(255,255,255,.35) 50%,transparent 70%);transform:translateX(-120%);transition:transform .9s var(--ease)}
+.btn:hover{transform:translateY(-2px);box-shadow:0 18px 36px -14px color-mix(in srgb,var(--blue) 90%,transparent)}
+.btn:hover::after{transform:translateX(120%)}
+.btn svg{width:18px;height:18px;transition:transform .5s var(--ease)}
+.btn:hover svg.arr{transform:translateX(4px)}
+.btn.ghost{background:var(--glass);color:var(--ink);box-shadow:inset 0 0 0 1px var(--line);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
+.btn.red{background:var(--red);box-shadow:0 12px 30px -14px color-mix(in srgb,var(--red) 80%,transparent)}
+.btn.sm{min-height:42px;padding:0 18px;font-size:14px}
+.glass{background:var(--glass);-webkit-backdrop-filter:blur(24px) saturate(150%);backdrop-filter:blur(24px) saturate(150%);box-shadow:inset 0 0 0 1px var(--glass-b),0 30px 60px -30px var(--shadow)}
+.pulse{position:relative;width:10px;height:10px;border-radius:50%;background:var(--red);flex:none}
+.pulse::after{content:"";position:absolute;inset:0;border-radius:50%;background:inherit;animation:ping 1.8s var(--ease) infinite}
+.pulse.ok{background:#22b26b}
+@keyframes ping{to{transform:scale(3);opacity:0}}
+
+/* ================= ШАПКА ================= */
+.hdr{position:absolute;top:0;left:0;right:0;z-index:50}
+.hdr .wrap{display:flex;align-items:center;gap:22px;height:76px}
+.hdr.scrolled{background:color-mix(in srgb,var(--bg) 72%,transparent);-webkit-backdrop-filter:blur(18px) saturate(160%);backdrop-filter:blur(18px) saturate(160%);box-shadow:0 1px 0 var(--line)}
+.hdr.hide{transform:translateY(-100%)}
+/* Логотип по фото клиента: синий крест, бордовые буквы, красные «М» и «В» */
+:root{--logo-blue:#3f86e0;--logo-red:#c8173f;--logo-dark:#6d2350;--logo-sub:#4a5fb0;--logo-tag:#ffffff}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--logo-red:#ff4d6d;--logo-dark:#f1d9e4;--logo-sub:#9fb4ff}}
+:root[data-theme="dark"]{--logo-red:#ff4d6d;--logo-dark:#f1d9e4;--logo-sub:#9fb4ff}
+.logo{display:flex;align-items:center;text-decoration:none;min-height:44px;flex:none}
+.logo svg{height:58px;width:auto;aspect-ratio:384/110;overflow:visible}
+.nav{display:flex;gap:26px;margin-left:auto}
+.nav a{text-decoration:none;font-weight:500;font-size:15px;padding:12px 0;position:relative;color:var(--ink-2)}
+.nav a::after{content:"";position:absolute;left:0;right:0;bottom:6px;height:2px;border-radius:2px;background:var(--blue);transform:scaleX(0);transition:transform .45s var(--ease)}
+.nav a:hover{color:var(--ink)}
+.nav a:hover::after{transform:scaleX(1)}
+.sos{display:flex;align-items:center;gap:10px;text-decoration:none;padding:8px 16px 8px 14px;border-radius:999px;background:var(--red-soft);min-height:44px;white-space:nowrap}
+.sos svg{display:none;width:18px;height:18px;color:var(--red)}
+.sos span{font:600 14px/1.1 var(--sans)}
+.sos small{display:block;font:500 9.5px/1.2 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--red)}
+.theme-btn{width:44px;height:44px;border-radius:50%;border:0;background:transparent;display:grid;place-items:center;cursor:pointer;color:var(--ink)}
+.theme-btn svg{width:20px;height:20px}
+@media (max-width:1100px){.nav{display:none}.sos{margin-left:auto}}
+@media (max-width:640px){.hdr .btn{display:none}.sos small{display:none}.sos{padding:8px 14px}.logo svg{height:42px}}
+@media (max-width:440px){.sos span{display:none}.sos svg{display:block}.sos{width:44px;padding:0;justify-content:center;position:relative}.sos .pulse{position:absolute;top:4px;right:4px;width:8px;height:8px}.hdr .wrap{gap:8px}}
+
+/* ================= ПЕРВЫЙ ЭКРАН ================= */
+.hero{position:relative;padding:120px 0 60px;min-height:max(100svh,760px);display:flex;align-items:center;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:-20% -10% auto auto;width:70vw;height:70vw;border-radius:50%;background:radial-gradient(closest-side,color-mix(in srgb,var(--blue) 22%,transparent),transparent);pointer-events:none}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(24px,5vw,80px);align-items:center;position:relative}
+.hero .wrap>*{min-width:0}
+.status-row{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px}
+.tag{display:inline-flex;align-items:center;gap:10px;padding:9px 14px;border-radius:999px;background:var(--card);box-shadow:inset 0 0 0 1px var(--line);font-size:14px;font-weight:500}
+.tag svg{width:16px;height:16px;color:var(--blue)}
+h1{margin:0}
+.eyebrow{display:block;font:500 12px/1.4 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:18px}
+.big{display:block;font:800 clamp(52px,7.6vw,124px)/.92 var(--sans);letter-spacing:-.055em}
+.big .ln{display:block}
+.big .bl{color:var(--blue)}
+.heart{display:inline-block;width:.62em;height:.62em;vertical-align:-.02em;margin-left:.08em}
+.heart path{fill:none;stroke:var(--red);stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:120;stroke-dashoffset:0;animation:beat 2.4s var(--ease) infinite;transform-origin:50% 55%;transform-box:fill-box}
+@keyframes beat{0%,100%{transform:scale(1)}12%{transform:scale(1.14)}24%{transform:scale(1)}36%{transform:scale(1.1)}48%{transform:scale(1)}}
+.lead{font-size:clamp(17px,1.5vw,20px);line-height:1.5;color:var(--ink-2);max-width:540px;margin:28px 0 34px}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px}
+.emerg{display:flex;align-items:center;gap:18px;margin-top:34px;padding:16px 22px 16px 18px;border-radius:24px;max-width:560px;text-decoration:none;
+  background:var(--card);box-shadow:inset 0 0 0 1px var(--line),0 24px 50px -36px var(--shadow);transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
+.emerg:hover{transform:translateY(-3px);box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--red) 40%,transparent),0 30px 60px -36px var(--shadow)}
+.emerg .ic{width:52px;height:52px;border-radius:16px;background:var(--red);color:#fff;display:grid;place-items:center;flex:none;position:relative}
+.emerg .ic::before{content:"";position:absolute;inset:-6px;border-radius:20px;border:2px solid var(--red);opacity:.35;animation:ring 2s var(--ease) infinite}
+@keyframes ring{0%{transform:scale(.85);opacity:.5}100%{transform:scale(1.15);opacity:0}}
+.emerg .ic svg{width:24px;height:24px}
+.emerg b{display:block;font:700 clamp(20px,2vw,26px)/1.1 var(--sans);letter-spacing:-.02em}
+.emerg small{display:block;color:var(--muted);font-size:13.5px;margin-bottom:4px}
+.emerg .alt{margin-left:auto;text-align:right;font-size:13px;color:var(--muted);white-space:nowrap}
+
+.hero-visual{position:relative;justify-self:center;width:min(100%,460px)}
+.arch{position:relative;aspect-ratio:3/4;border-radius:999px 999px 36px 36px;overflow:hidden;background:var(--bg-2);box-shadow:0 50px 90px -50px var(--shadow)}
+.arch img{width:100%;height:115%;object-fit:cover;object-position:50% 30%;will-change:transform}
+.arch::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(14,33,64,.35));pointer-events:none}
+.chip{position:absolute;display:flex;align-items:center;gap:10px;padding:12px 16px;border-radius:18px;font-size:14px;font-weight:600;line-height:1.2;white-space:nowrap;animation:bob 6s ease-in-out infinite}
+.chip small{display:block;font-weight:400;color:var(--muted);font-size:12px}
+.chip .ci{width:36px;height:36px;border-radius:12px;display:grid;place-items:center;background:var(--blue-soft);color:var(--blue);flex:none}
+.chip .ci svg{width:20px;height:20px}
+.chip.c1{left:-12%;top:16%}
+.chip.c2{right:-10%;top:48%;animation-delay:-2s}
+.chip.c3{left:-6%;bottom:9%;animation-delay:-4s}
+.stars{color:#ffb020;letter-spacing:1px}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.sphere{position:absolute;border-radius:50%;pointer-events:none;
+  background:radial-gradient(circle at 30% 28%,rgba(255,255,255,.95),rgba(255,255,255,.25) 22%,color-mix(in srgb,var(--blue-2) 30%,transparent) 60%,color-mix(in srgb,var(--blue) 45%,transparent));
+  box-shadow:inset -8px -12px 24px color-mix(in srgb,var(--blue) 35%,transparent),0 20px 40px -20px var(--shadow);animation:bob 8s ease-in-out infinite}
+.sphere.s1{width:84px;height:84px;right:-6%;top:4%}
+.sphere.s2{width:46px;height:46px;left:4%;top:-3%;animation-delay:-3s}
+.sphere.s3{width:30px;height:30px;right:12%;bottom:-2%;animation-delay:-5s}
+.ecg{position:absolute;left:0;right:0;bottom:36px;height:80px;pointer-events:none;opacity:.6}
+.ecg path{fill:none;stroke:var(--blue);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:240 1800;animation:ecg 5s linear infinite}
+.ecg path.base{stroke:var(--line);stroke-dasharray:none;animation:none}
+@keyframes ecg{from{stroke-dashoffset:2040}to{stroke-dashoffset:0}}
+@media (max-width:960px){
+  .hero{padding:104px 0 40px;min-height:0}
+  .hero .wrap{grid-template-columns:1fr}
+  .hero-visual{width:min(78%,360px);margin-top:12px}
+  .chip.c1{left:-18%}.chip.c2{right:-22%}.chip.c3{left:-14%}
+  .emerg .alt{display:none}
+}
+@media (max-width:480px){.chip{padding:9px 12px;font-size:12.5px}.chip .ci{width:30px;height:30px}.chip small{font-size:11px}}
+
+/* ================= ПОДХОД: короткий текст ================= */
+.approach{padding:clamp(70px,9vw,120px) 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.approach .wrap{display:grid;grid-template-columns:1fr 2.4fr;gap:24px;align-items:start}
+.approach .wrap>*{min-width:0}
+.approach .micro{color:var(--blue);padding-top:10px}
+.approach p{margin:0;font:600 clamp(26px,3.2vw,46px)/1.18 var(--sans);letter-spacing:-.035em;max-width:900px}
+.approach p span{color:var(--muted)}
+@media (max-width:760px){.approach .wrap{grid-template-columns:1fr}.approach .micro{padding-top:0}}
+
+/* ================= СЕКЦИИ ================= */
+.sec{padding:clamp(80px,11vw,150px) 0}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:clamp(36px,5vw,64px);flex-wrap:wrap}
+.sec-head .micro{color:var(--blue);margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.sec-head .micro::before{content:"";width:18px;height:2px;border-radius:2px;background:currentColor}
+.sec-title{margin:0;font:800 clamp(34px,4.6vw,68px)/1 var(--sans);letter-spacing:-.045em;max-width:820px}
+.sec-title span{color:var(--blue)}
+.sec-head p{margin:0;max-width:400px;color:var(--ink-2)}
+
+/* Как мы работаем */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;counter-reset:s}
+.step{position:relative;padding:22px;border-radius:28px;background:var(--card);box-shadow:inset 0 0 0 1px var(--line);transition:transform .6s var(--ease),box-shadow .6s var(--ease);cursor:default;overflow:hidden}
+.step:hover,.step.play{transform:translateY(-8px);box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--blue) 35%,transparent),0 40px 70px -40px var(--shadow)}
+.step .art{aspect-ratio:1/.82;border-radius:20px;background:var(--bg);display:grid;place-items:center;margin-bottom:22px;position:relative;overflow:hidden;transition:background .5s}
+.step:hover .art,.step.play .art{background:var(--blue-soft)}
+.step .art svg{width:62%;overflow:visible}
+.step .art svg *{animation-play-state:paused!important}
+.step:hover .art svg *,.step.play .art svg *{animation-play-state:running!important}
+.step .n{position:absolute;top:14px;left:16px;font:500 11px/1 var(--mono);color:var(--muted)}
+.step .live{position:absolute;top:12px;right:12px;font:500 10px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--blue);padding:6px 9px;border-radius:999px;background:var(--card);opacity:0;transform:translateY(-6px);transition:.4s var(--ease)}
+.step:hover .live,.step.play .live{opacity:1;transform:none}
+.step h3{margin:0 0 8px;font:700 21px/1.2 var(--sans);letter-spacing:-.02em}
+.step p{margin:0;color:var(--muted);font-size:15px}
+.st{stroke:var(--ink);stroke-width:2.4;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.st.b{stroke:var(--blue)}
+.st.r{stroke:var(--red)}
+/* 1: календарь */
+.cal-cell{fill:var(--blue);transform-box:fill-box;transform-origin:center;animation:cell 2.6s var(--ease) infinite}
+@keyframes cell{0%,100%{transform:scale(1)}15%{transform:scale(.4)}35%{transform:scale(1.15)}50%{transform:scale(1)}}
+.cal-check{stroke:#fff;stroke-width:3;fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:30;animation:chk 2.6s var(--ease) infinite}
+@keyframes chk{0%,100%{stroke-dashoffset:0}15%{stroke-dashoffset:30}35%{stroke-dashoffset:30}55%{stroke-dashoffset:0}}
+.cal-dot{fill:var(--muted);opacity:.5}
+/* 2: стетоскоп + кардиограмма */
+.steth-ecg{stroke:var(--red);stroke-width:2.6;fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:160;animation:ecgDraw 2s linear infinite}
+@keyframes ecgDraw{0%{stroke-dashoffset:0}1%{stroke-dashoffset:160}100%{stroke-dashoffset:0}}
+.steth-bell{transform-box:fill-box;transform-origin:center;animation:bell 2s ease-in-out infinite}
+@keyframes bell{0%,100%{transform:rotate(0)}50%{transform:rotate(-10deg)}}
+/* 3: УЗИ */
+.scan{fill:url(#scanG);animation:scan 2.2s ease-in-out infinite alternate}
+@keyframes scan{from{transform:translateY(0)}to{transform:translateY(64px)}}
+.scan-line{stroke:var(--blue);stroke-width:2.4;animation:scan 2.2s ease-in-out infinite alternate}
+.blip{fill:var(--blue);transform-box:fill-box;transform-origin:center;animation:blip 2.2s ease-in-out infinite}
+.blip:nth-of-type(2){animation-delay:.5s}.blip:nth-of-type(3){animation-delay:1s}
+@keyframes blip{0%,100%{transform:scale(0)}50%{transform:scale(1)}}
+/* 4: лечение */
+.hrt{fill:var(--red);transform-box:fill-box;transform-origin:center;animation:hb 1.3s ease-in-out infinite}
+@keyframes hb{0%,100%{transform:scale(1)}20%{transform:scale(1.22)}40%{transform:scale(1)}60%{transform:scale(1.12)}}
+.msg{transform-box:fill-box;transform-origin:left bottom;animation:msg 2.6s var(--ease) infinite}
+@keyframes msg{0%,100%{transform:scale(1)}10%{transform:scale(0)}30%{transform:scale(1.08)}40%{transform:scale(1)}}
+@media (max-width:1060px){.steps{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.steps{grid-template-columns:1fr}}
+
+/* ================= УСЛУГИ И ЦЕНЫ ================= */
+.price-sec{background:var(--bg-2)}
+.search{position:relative;margin-bottom:22px}
+.search input{width:100%;min-height:62px;padding:0 22px 0 58px;border:0;border-radius:20px;background:var(--card);box-shadow:inset 0 0 0 1px var(--line);outline:none;font-size:17px;transition:box-shadow .3s}
+.search input:focus{box-shadow:inset 0 0 0 2px var(--blue),0 20px 40px -30px var(--shadow)}
+.search svg{position:absolute;left:20px;top:50%;width:22px;height:22px;transform:translateY(-50%);color:var(--muted)}
+.search .count{position:absolute;right:20px;top:50%;transform:translateY(-50%);color:var(--muted)}
+.results{display:none;background:var(--card);border-radius:24px;padding:8px 22px;box-shadow:inset 0 0 0 1px var(--line);margin-bottom:22px;max-height:440px;overflow:auto}
+.results.on{display:block}
+.results .row small{display:block;color:var(--blue);font:500 10px/1.4 var(--mono);letter-spacing:.06em;text-transform:uppercase}
+.results mark{background:color-mix(in srgb,var(--blue) 22%,transparent);color:inherit;border-radius:4px;padding:0 2px}
+.results .empty{padding:18px 0;color:var(--muted)}
+.svc{display:grid;grid-template-columns:330px 1fr;gap:20px;align-items:start}
+.svc>*{min-width:0}
+.tabs{display:grid;gap:8px;position:sticky;top:96px}
+.tab{display:flex;align-items:center;gap:14px;width:100%;min-height:62px;padding:10px 16px 10px 10px;border:0;border-radius:20px;background:transparent;cursor:pointer;text-align:left;transition:background .3s,box-shadow .3s}
+.tab .ti{width:42px;height:42px;border-radius:14px;display:grid;place-items:center;background:var(--card);color:var(--blue);flex:none;transition:background .3s,color .3s,transform .5s var(--ease)}
+.tab .ti svg{width:22px;height:22px}
+.tab b{display:block;font-weight:600;font-size:15.5px;line-height:1.2}
+.tab small{color:var(--muted);font-size:12.5px}
+.tab:hover{background:color-mix(in srgb,var(--card) 60%,transparent)}
+.tab[aria-selected="true"]{background:var(--card);box-shadow:0 20px 40px -30px var(--shadow)}
+.tab[aria-selected="true"] .ti{background:var(--blue);color:#fff;transform:rotate(-8deg)}
+.tab .go{margin-left:auto;opacity:0;transform:translateX(-6px);transition:.4s var(--ease);color:var(--blue)}
+.tab[aria-selected="true"] .go{opacity:1;transform:none}
+.panel{background:var(--card);border-radius:32px;padding:clamp(18px,2.4vw,28px);box-shadow:0 40px 80px -60px var(--shadow)}
+.panel-top{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(18px,2.4vw,32px);align-items:center;margin-bottom:22px}
+.panel-top>*{min-width:0}
+.panel-img{aspect-ratio:412/334;border-radius:22px;overflow:hidden;background:var(--bg)}
+.panel-img img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.panel:hover .panel-img img{transform:scale(1.05)}
+.panel h3{margin:0 0 10px;font:800 clamp(26px,2.6vw,38px)/1.05 var(--sans);letter-spacing:-.04em}
+.panel-top p{margin:0 0 20px;color:var(--ink-2)}
+.prices{list-style:none;margin:0;padding:0}
+.row{display:flex;justify-content:space-between;align-items:baseline;gap:18px;padding:14px 0;border-top:1px solid var(--line);font-size:15px}
+.row span:first-child{flex:1}
+.row .dots{flex:1;border-bottom:1px dotted var(--line);transform:translateY(-4px);min-width:20px;display:none}
+.row b{font:600 15px/1.3 var(--sans);white-space:nowrap;color:var(--ink)}
+.prices .row{animation:rowIn .6s var(--ease) backwards}
+@keyframes rowIn{from{transform:translateY(10px);opacity:.0}}
+.more{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-top:18px}
+.link-btn{border:0;background:none;cursor:pointer;color:var(--blue);font-weight:600;padding:12px 0;min-height:44px}
+.note{font-size:13px;color:var(--muted);margin:18px 0 0}
+@media (max-width:960px){
+  .svc{grid-template-columns:1fr}
+  .tabs{position:relative;top:0;display:flex;overflow-x:auto;scrollbar-width:none;margin:0 calc(var(--gut)*-1);padding:0 var(--gut) 6px}
+  .tabs::-webkit-scrollbar{display:none}
+  .tab{flex:0 0 auto;width:auto;min-height:54px;padding:6px 16px 6px 6px}
+  .tab small,.tab .go{display:none}
+  .panel-top{grid-template-columns:1fr}
+}
+
+/* ================= О НАС ================= */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,80px);align-items:center}
+.about>*{min-width:0}
+.about-text p{color:var(--ink-2);font-size:17px;margin:0 0 18px}
+.about-text p.big-p{font:600 clamp(22px,2.2vw,30px)/1.3 var(--sans);letter-spacing:-.02em;color:var(--ink)}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:30px}
+.stat{padding:22px;border-radius:24px;background:var(--card);box-shadow:inset 0 0 0 1px var(--line)}
+.stat b{display:block;font:800 clamp(34px,3.6vw,52px)/1 var(--sans);letter-spacing:-.05em;color:var(--blue)}
+.stat span{display:block;margin-top:8px;color:var(--muted);font-size:14px}
+.team-photo{position:relative;border-radius:36px;overflow:hidden;aspect-ratio:4/5;background:var(--bg-2);box-shadow:0 50px 90px -50px var(--shadow)}
+.team-photo img{width:100%;height:118%;object-fit:cover;object-position:50% 20%;will-change:transform}
+.team-photo .cap{position:absolute;left:16px;right:16px;bottom:16px;padding:16px 18px;border-radius:22px;color:#fff;background:rgba(14,33,64,.35);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);box-shadow:inset 0 0 0 1px rgba(255,255,255,.25)}
+.team-photo .cap b{display:block;font-size:17px}
+.team-photo .cap span{font-size:13.5px;opacity:.85}
+@media (max-width:960px){.about{grid-template-columns:1fr}.team-photo{aspect-ratio:4/4.4}}
+
+.gallery{margin-top:clamp(60px,8vw,110px);overflow:hidden;-webkit-mask:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.g-track{display:flex;gap:16px;width:max-content;animation:gal 70s linear infinite}
+.gallery:hover .g-track{animation-play-state:paused}
+@keyframes gal{to{transform:translateX(-50%)}}
+.g-item{position:relative;width:clamp(200px,22vw,280px);aspect-ratio:3/4;border-radius:26px;overflow:hidden;flex:none;background:var(--bg-2)}
+.g-item img{width:100%;height:100%;object-fit:cover;transition:transform 1s var(--ease)}
+.g-item:hover img{transform:scale(1.07)}
+.g-item figcaption{position:absolute;left:10px;right:10px;bottom:10px;padding:12px 14px;border-radius:16px;font-size:13px;line-height:1.35;color:#fff;background:rgba(14,33,64,.4);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);transform:translateY(130%);transition:transform .6s var(--ease)}
+.g-item:hover figcaption{transform:none}
+
+/* ================= ОТЗЫВЫ ================= */
+.revs{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(24px,5vw,80px);align-items:center}
+.revs>*{min-width:0}
+.score{font:800 clamp(90px,12vw,170px)/.85 var(--sans);letter-spacing:-.06em}
+.score-stars{font-size:26px;color:#ffb020;letter-spacing:4px;margin:16px 0 8px}
+.stack{position:relative;height:380px;margin-top:40px}
+.rcard{position:absolute;inset:0;padding:clamp(24px,3vw,36px);border-radius:32px;background:var(--card);box-shadow:inset 0 0 0 1px var(--line),0 40px 70px -50px var(--shadow);
+  display:flex;flex-direction:column;transition:transform .8s var(--ease),opacity .6s,filter .6s;transform-origin:50% 100%}
+.rcard blockquote{margin:16px 0 0;font:500 clamp(18px,1.7vw,22px)/1.45 var(--sans);letter-spacing:-.01em}
+.rcard footer{margin-top:auto;display:flex;align-items:center;gap:14px}
+.rcard .av{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;font-weight:700;color:#fff;background:linear-gradient(135deg,var(--blue),var(--blue-2))}
+.rcard footer span{color:var(--muted);font-size:14px}
+.rcard[data-pos="0"]{z-index:3;transform:none}
+.rcard[data-pos="1"]{z-index:2;transform:translate(18px,-22px) scale(.95) rotate(3deg);filter:brightness(.95)}
+.rcard[data-pos="2"]{z-index:1;transform:translate(34px,-42px) scale(.9) rotate(6deg);filter:brightness(.9)}
+.rcard[data-pos="1"]>*,.rcard[data-pos="2"]>*{opacity:.35}
+.rcard:not([data-pos="0"]):not([data-pos="1"]):not([data-pos="2"]):not([data-pos="out"]){z-index:0;transform:translate(40px,-50px) scale(.86) rotate(8deg);opacity:0}
+.rcard[data-pos="out"]{z-index:4;transform:translateX(-120%) rotate(-12deg);opacity:0}
+.rcard .top{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.ya{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border-radius:999px;background:var(--bg);font:500 11px/1 var(--mono);letter-spacing:.04em;color:var(--ink-2);white-space:nowrap}
+.ya svg{width:12px;height:14px}
+.ya-sum{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:6px 0 18px}
+.award{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:#fff6db;color:#7a5600;font-size:13px;font-weight:600}
+:root[data-theme="dark"] .award{background:#3a3018;color:#ffd77a}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .award{background:#3a3018;color:#ffd77a}}
+.all-revs{display:inline-flex;align-items:center;gap:8px;margin-top:18px;color:var(--blue);font-weight:600;text-decoration:none;min-height:44px}
+.rev-count{font:500 11px/1 var(--mono);color:var(--muted);margin-left:6px}
+.rev-nav{display:flex;gap:10px;margin-top:22px}
+.circ{width:52px;height:52px;border-radius:50%;border:0;cursor:pointer;background:var(--card);box-shadow:inset 0 0 0 1px var(--line);display:grid;place-items:center;transition:background .3s,color .3s,transform .4s var(--ease)}
+.circ:hover{background:var(--blue);color:#fff;transform:scale(1.06)}
+.circ svg{width:20px;height:20px}
+@media (max-width:960px){.revs{grid-template-columns:1fr}.stack{height:390px;margin-right:22px}}
+@media (max-width:480px){.stack{height:410px}.rcard blockquote{font-size:16.5px}
+  .rcard[data-pos="1"]{transform:translate(10px,-16px) scale(.96) rotate(2deg)}
+  .rcard[data-pos="2"]{transform:translate(18px,-30px) scale(.92) rotate(4deg)}}
+
+/* ================= КОНТАКТЫ И КАРТА ================= */
+.contacts{position:relative;border-radius:40px;overflow:hidden;min-height:640px;background:var(--bg-2)}
+.contacts iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:grayscale(.55) sepia(.12) hue-rotate(170deg) saturate(1.3) contrast(.95) brightness(1.03)}
+:root[data-theme="dark"] .contacts iframe{filter:invert(.9) hue-rotate(180deg) saturate(.6) brightness(.95)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .contacts iframe{filter:invert(.9) hue-rotate(180deg) saturate(.6) brightness(.95)}}
+.c-panel{position:relative;z-index:2;width:min(440px,100%);margin:20px;padding:clamp(22px,2.6vw,32px);border-radius:30px}
+.c-panel h3{margin:6px 0 4px;font:800 28px/1.1 var(--sans);letter-spacing:-.03em}
+.c-open{display:flex;align-items:center;gap:10px;font-weight:600;margin:14px 0 18px}
+.sched{list-style:none;padding:0;margin:0 0 20px;display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
+.sched li{text-align:center;padding:10px 0;border-radius:14px;background:color-mix(in srgb,var(--card) 70%,transparent);font-size:12px;line-height:1.3}
+.sched li b{display:block;font-size:13px}
+.sched li.today{background:var(--blue);color:#fff}
+.c-list{display:grid;gap:4px;margin-bottom:20px}
+.c-list a,.c-list div{display:flex;align-items:center;gap:14px;min-height:50px;text-decoration:none;font-weight:600}
+.c-list .ic{width:42px;height:42px;border-radius:14px;display:grid;place-items:center;background:var(--blue-soft);color:var(--blue);flex:none}
+.c-list .ic svg{width:19px;height:19px}
+.c-list small{display:block;font-weight:400;color:var(--muted);font-size:12.5px}
+.socials{display:flex;gap:10px;margin-bottom:20px}
+.socials a{width:48px;height:48px;border-radius:16px;display:grid;place-items:center;background:var(--card);box-shadow:inset 0 0 0 1px var(--line);transition:transform .45s var(--ease),background .3s,color .3s}
+.socials a:hover{transform:translateY(-4px) rotate(-6deg);background:var(--blue);color:#fff}
+.socials svg{width:22px;height:22px}
+.c-btns{display:flex;gap:10px;flex-wrap:wrap}
+.c-btns .btn{flex:1 1 160px}
+.pin{position:absolute;z-index:1;left:62%;top:50%;width:22px;height:22px;border-radius:50%;background:var(--blue);box-shadow:0 0 0 6px color-mix(in srgb,var(--blue) 25%,transparent);pointer-events:none;display:none}
+@media (max-width:860px){
+  .contacts{border-radius:30px;min-height:0;display:flex;flex-direction:column}
+  .contacts iframe{position:relative;height:340px;order:2}
+  .c-panel{margin:0;width:100%;border-radius:0;background:var(--card);-webkit-backdrop-filter:none;backdrop-filter:none;box-shadow:none}
+  .sched li{font-size:11px;padding:8px 0}
+}
+
+/* ================= ПОДВАЛ ================= */
+footer.foot{padding:60px 0 0}
+.foot-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;align-items:center;padding-bottom:30px;border-bottom:1px solid var(--line)}
+.foot-links{display:flex;flex-wrap:wrap;gap:22px}
+.foot-links a{text-decoration:none;color:var(--ink-2)}
+.foot-bottom{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding:24px 0 34px;color:var(--muted);font-size:13px}
+.demo-line{background:var(--blue);color:#fff;text-align:center;padding:10px var(--gut);font:500 10.5px/1.5 var(--mono);letter-spacing:.06em;text-transform:uppercase}
+
+/* Нижняя панель на телефоне */
+.mbar{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:60;display:none;gap:8px;padding:8px;border-radius:999px;transform:translateY(150%);transition:transform .6s var(--ease)}
+.mbar.on{transform:none}
+.mbar .btn{flex:1;min-height:50px;padding:0 12px;font-size:15px}
+@media (max-width:760px){.mbar{display:flex}.demo-line{padding-bottom:84px}}
+
+/* ================= ЗАПИСЬ (окно) ================= */
+dialog.book{width:min(620px,calc(100vw - 24px));max-height:calc(100dvh - 24px);border:0;padding:0;border-radius:32px;background:var(--card);color:var(--ink);box-shadow:0 60px 120px -40px rgba(0,0,0,.5);overflow:auto}
+dialog.book::backdrop{background:rgba(9,19,31,.45);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+dialog.book[open]{animation:dlg .55s var(--ease)}
+@keyframes dlg{from{transform:translateY(30px) scale(.97);opacity:0}}
+.bk{padding:clamp(22px,3vw,34px)}
+.bk-head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin-bottom:8px}
+.bk-head h2{margin:6px 0 0;font:800 30px/1.05 var(--sans);letter-spacing:-.04em}
+.x{width:44px;height:44px;border-radius:50%;border:0;background:var(--bg);cursor:pointer;display:grid;place-items:center;flex:none}
+.x svg{width:18px;height:18px}
+.q{padding:18px 0;border-top:1px solid var(--line)}
+.q:first-of-type{border-top:0}
+.q-h{font-weight:600;margin-bottom:12px;display:flex;justify-content:space-between;gap:10px}
+.q-h small{font:500 10.5px/1.6 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.c{min-height:44px;padding:0 16px;border:0;border-radius:999px;background:var(--bg);cursor:pointer;font-size:14.5px;font-weight:500;transition:background .25s,color .25s,transform .3s var(--ease)}
+.c:active{transform:scale(.95)}
+.c[aria-pressed="true"]{background:var(--blue);color:#fff}
+.c[disabled]{opacity:.35;text-decoration:line-through;cursor:not-allowed}
+.days{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding:2px}
+.days::-webkit-scrollbar{display:none}
+.d{flex:0 0 auto;width:62px;min-height:70px;border:0;border-radius:18px;background:var(--bg);cursor:pointer;display:grid;place-content:center;gap:3px;text-align:center}
+.d small{font:500 10px/1 var(--mono);text-transform:uppercase;color:var(--muted)}
+.d b{font:700 20px/1 var(--sans)}
+.d[aria-pressed="true"]{background:var(--blue);color:#fff}
+.d[aria-pressed="true"] small{color:inherit;opacity:.8}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.fld{display:grid;gap:6px}
+.fld.full{grid-column:1/-1}
+.fld label{font:500 10.5px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.fld input,.fld textarea{width:100%;min-height:52px;padding:14px 16px;border:0;border-radius:16px;background:var(--bg);outline:none;font-size:16px;box-shadow:inset 0 0 0 1.5px transparent;transition:box-shadow .25s}
+.fld textarea{min-height:80px;resize:vertical}
+.fld input:focus,.fld textarea:focus{box-shadow:inset 0 0 0 1.5px var(--blue)}
+.fld.err input{box-shadow:inset 0 0 0 1.5px var(--red)}
+.consent{display:flex;gap:12px;align-items:flex-start;font-size:13px;color:var(--muted);margin:16px 0 18px;cursor:pointer}
+.consent input{width:20px;height:20px;margin:1px 0 0;accent-color:var(--blue);flex:none}
+.consent.err{color:var(--red)}
+.bk .btn.full{width:100%;min-height:58px}
+.done{display:none;text-align:center;padding:30px 6px 10px}
+.done.on{display:block}
+.done svg{width:96px;height:96px;margin:0 auto 20px}
+.done circle{stroke:var(--blue);stroke-width:3;fill:none;stroke-dasharray:290;stroke-dashoffset:290;animation:draw .9s var(--ease) forwards}
+.done path{stroke:var(--blue);stroke-width:4;fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:70;stroke-dashoffset:70;animation:draw .6s .55s var(--ease) forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.done h3{margin:0 0 10px;font:800 28px/1.1 var(--sans);letter-spacing:-.03em}
+.done p{color:var(--muted);margin:0 0 22px}
+@media (max-width:480px){.fields{grid-template-columns:1fr}}
+
+/* ================= ЗВЕРУШКИ ================= */
+.pet{position:absolute;pointer-events:none;overflow:visible}
+.pet .ln{fill:none;stroke:var(--ink-2);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.pet .fl{fill:var(--card)}
+.pet .ac{fill:var(--blue)}
+/* кот за карточкой экстренного звонка */
+.emerg{position:relative}
+.peek-cat{width:64px;height:36px;top:-29px;right:34px}
+.peek-cat .eye{transform-box:fill-box;transform-origin:center;animation:blink 5s infinite}
+@keyframes blink{0%,92%,100%{transform:scaleY(1)}95%{transform:scaleY(.1)}}
+.peek-cat .ear{transform-box:fill-box;transform-origin:50% 100%;transition:transform .3s var(--ease)}
+.emerg:hover .peek-cat .ear.l{transform:rotate(-14deg)}
+.emerg:hover .peek-cat .ear.r{transform:rotate(14deg)}
+/* попугай на арке */
+.parrot{width:52px;height:60px;top:-50px;left:calc(50% - 20px);z-index:3}
+.parrot .head{transform-box:fill-box;transform-origin:50% 90%;animation:tilt 7s ease-in-out infinite}
+@keyframes tilt{0%,70%,100%{transform:rotate(0)}76%,88%{transform:rotate(-18deg)}}
+/* следы лап */
+.approach{position:relative;overflow:hidden}
+.paws{position:absolute;right:4%;bottom:14px;width:min(420px,60vw);height:90px;pointer-events:none}
+.paws use{fill:var(--blue);opacity:0}
+.paws.on use{animation:step 6s var(--ease) infinite}
+@keyframes step{0%{opacity:0;transform:scale(.6)}8%{opacity:.28;transform:none}60%{opacity:.28}80%,100%{opacity:0}}
+.paws use{transform-box:fill-box;transform-origin:center}
+/* спящий кот в контактах */
+.c-panel{position:relative}
+.sleep-cat{width:70px;height:46px;top:20px;right:22px}
+.sleep-cat .z{font:600 11px/1 var(--sans);fill:var(--blue);animation:zz 3s ease-in-out infinite;opacity:0}
+.sleep-cat .z:nth-of-type(2){animation-delay:1s}.sleep-cat .z:nth-of-type(3){animation-delay:2s}
+@keyframes zz{0%{opacity:0;transform:translate(0,0)}30%{opacity:.9}100%{opacity:0;transform:translate(8px,-14px)}}
+.sleep-cat .body{transform-box:fill-box;transform-origin:50% 100%;animation:breathe 3.4s ease-in-out infinite}
+@keyframes breathe{50%{transform:scaleY(1.05)}}
+/* иконки в записи */
+.c svg.pi{width:18px;height:18px;margin-right:6px;vertical-align:-4px;display:inline-block}
+.c svg.pi *{fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+@media (max-width:480px){.peek-cat{right:18px}}
+
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.paws use{opacity:.28}}
+</style>
+</head>
+<body>
+
+<!-- ================= ШАПКА ================= -->
+<header class="hdr" id="hdr">
+  <div class="wrap">
+    <!-- Логотип перерисован в векторе по фото клиента (assets/logo-reference.png) -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+      <symbol id="logo" viewBox="0 0 384 110">
+        <path d="M44 10h34v30h34v32H78v32H44V72H10V40h34z" fill="var(--logo-blue)"/>
+        <text x="45.5" y="99" font-family="Onest,sans-serif" font-weight="500" font-size="8.6" fill="var(--logo-tag)">мы рядом</text>
+        <text x="66" y="101" font-family="Onest,sans-serif" font-weight="800" font-size="86" letter-spacing="-2" fill="var(--logo-red)">М</text>
+        <text x="142" y="101" font-family="Onest,sans-serif" font-weight="600" font-size="62" letter-spacing="-1"><tspan fill="var(--logo-dark)">ЕДИ</tspan><tspan fill="var(--logo-red)">В</tspan><tspan fill="var(--logo-dark)">ЕТ</tspan></text>
+        <text x="144" y="34" font-family="Onest,sans-serif" font-weight="500" font-size="21.5" fill="var(--logo-sub)">ветеринарная клиника</text>
+      </symbol>
+    </svg>
+    <a class="logo" href="#top" aria-label="МедиВет, ветеринарная клиника — на главную"><svg aria-hidden="true"><use href="#logo"/></svg></a>
+    <nav class="nav" aria-label="Разделы">
+      <a href="#how">Как мы работаем</a>
+      <a href="#prices">Услуги и цены</a>
+      <a href="#about">О нас</a>
+      <a href="#reviews">Отзывы</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+    <a class="sos" href="tel:+79313668882" aria-label="Экстренный звонок: +7 931 366-88-82"><i class="pulse"></i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><span><small>Экстренно</small>+7 931 366-88-82</span></a>
+    <button class="theme-btn" id="themeBtn" type="button" aria-label="Сменить тему"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg></button>
+    <button class="btn sm" type="button" data-book>Записаться</button>
+  </div>
+</header>
+
+<main id="top">
+<!-- ================= ПЕРВЫЙ ЭКРАН ================= -->
+<section class="hero" aria-label="Первый экран">
+  <div class="wrap">
+    <div class="hero-text">
+      <div class="status-row">
+        <span class="tag"><i class="pulse ok" id="stDot"></i><span id="stText">Открыто до 21:00</span></span>
+        <span class="tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Петергоф, Чичеринская, 2</span>
+      </div>
+      <h1>
+        <span class="eyebrow">Ветеринарная клиника МедиВет в Петергофе</span>
+        <span class="big"><span class="ln">Лечим</span><span class="ln">с <span class="bl">любовью</span><svg class="heart" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 27S4 19.5 4 11.5A6 6 0 0 1 16 8a6 6 0 0 1 12 3.5C28 19.5 16 27 16 27z"/></svg></span></span>
+      </h1>
+      <p class="lead">Терапия, УЗИ экспертного класса, дерматология, стационар и своя лаборатория. Объясняем диагноз понятным языком — и не назначаем лишнего.</p>
+      <div class="cta-row">
+        <button class="btn" type="button" data-book>Записаться на приём <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12h15M13 6l6 6-6 6"/></svg></button>
+        <a class="btn ghost" href="#prices">Услуги и цены</a>
+      </div>
+      <a class="emerg" href="tel:+79313668882">
+        <svg class="pet peek-cat" viewBox="0 0 64 36" aria-hidden="true">
+          <path class="ln fl ear l" d="M17 16 L15 3 L26 10"/><path class="ln fl ear r" d="M47 16 L49 3 L38 10"/>
+          <path class="ln fl" d="M10 30 C10 18 18 9 32 9 C46 9 54 18 54 30"/>
+          <ellipse class="eye ac" cx="25" cy="21" rx="2.2" ry="2.8"/><ellipse class="eye ac" cx="39" cy="21" rx="2.2" ry="2.8"/>
+          <path d="M30 25.5h4l-2 2z" fill="var(--red)"/><path class="ln" d="M5 23l9 2M5 28l9-1M59 23l-9 2M59 28l-9-1"/>
+          <path class="ln fl" d="M14 30.5c0-4 8-4 8 0v4h-8zM42 30.5c0-4 8-4 8 0v4h-8z"/>
+        </svg>
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></span>
+        <span><small>Питомцу плохо? Звоните сразу</small><b>+7 931 366-88-82</b></span>
+        <span class="alt">или городской<br>+7 812 943-88-82</span>
+      </a>
+    </div>
+
+    <div class="hero-visual" id="heroVisual">
+      <span class="sphere s1"></span><span class="sphere s2"></span><span class="sphere s3"></span>
+      <svg class="pet parrot" viewBox="0 0 52 60" aria-hidden="true">
+        <path class="ln fl" d="M20 26c-6 4-8 14-4 22 3 5 10 6 14 2 5-5 4-16-1-22z"/>
+        <path class="ln" d="M22 34c3 3 4 8 3 12"/>
+        <path class="ln" d="M17 47l-6 11M21 49l-3 10"/>
+        <path class="ln" d="M22 54v4M27 54v4"/>
+        <g class="head"><circle class="ln fl" cx="26" cy="18" r="9"/><circle class="ac" cx="28.5" cy="16.5" r="1.8"/>
+          <path d="M34 15c5 0 6 5 3 8-1-2-2-3-4-3z" fill="var(--red)"/><path class="ln" d="M22 9c-2-4 0-7 3-8M26 9c0-4 2-6 5-6"/></g>
+      </svg>
+      <div class="arch"><img id="heroImg" src="https://xn--b1adccnv1c.com/wp-content/uploads/2026/02/kontakt-s-pacientom-osmotr-bez-stressa-v-medivet.webp" alt="Врач клиники МедиВет знакомится с собакой перед осмотром"></div>
+      <div class="chip glass c1"><span class="ci"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.8l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 16.8l-5.4 2.9 1-6.1L3.2 9.3l6.1-.9z"/></svg></span><span><span class="stars">★★★★★</span> 5,0<small>87 оценок на Яндекс Картах</small></span></div>
+      <div class="chip glass c2"><span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 18a8 8 0 0 1 16 0"/><path d="M12 18l4-6"/><circle cx="12" cy="18" r="1.5"/></svg></span><span>УЗИ экспертного класса<small>точно и безболезненно</small></span></div>
+      <div class="chip glass c3"><span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="7" width="18" height="12" rx="3"/><path d="M8 7V5h8v2M12 10v6M9 13h6"/></svg></span><span>Свой стационар<small>индивидуальные боксы</small></span></div>
+    </div>
+  </div>
+  <svg class="ecg" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true">
+    <path class="base" d="M0 50 H1440"/>
+    <path d="M0 50 H300 L320 50 L332 22 L346 72 L360 8 L374 62 L384 50 H760 L780 50 L792 22 L806 72 L820 8 L834 62 L844 50 H1180 L1200 50 L1212 22 L1226 72 L1240 8 L1254 62 L1264 50 H1440"/>
+  </svg>
+</section>
+
+<!-- ================= ПОДХОД ================= -->
+<section class="approach" aria-label="Наш подход">
+  <div class="wrap">
+    <div class="micro">Наш подход</div>
+    <p>Спокойно для питомца, понятно для хозяина. <span>Без спешки, без лишних назначений — и с объяснением каждого шага.</span></p>
+  </div>
+  <svg class="paws" id="paws" viewBox="0 0 420 90" aria-hidden="true">
+    <defs><g id="pawp"><ellipse cx="0" cy="3" rx="5.5" ry="4.6"/><ellipse cx="-6.2" cy="-3.5" rx="2.1" ry="2.7"/><ellipse cx="-2.2" cy="-7.5" rx="2.1" ry="2.7"/><ellipse cx="2.2" cy="-7.5" rx="2.1" ry="2.7"/><ellipse cx="6.2" cy="-3.5" rx="2.1" ry="2.7"/></g></defs>
+    <g transform="translate(20 78) rotate(70)"><use href="#pawp" style="animation-delay:0s"/></g>
+    <g transform="translate(70 62) rotate(62)"><use href="#pawp" style="animation-delay:.25s"/></g>
+    <g transform="translate(125 72) rotate(66)"><use href="#pawp" style="animation-delay:.5s"/></g>
+    <g transform="translate(180 52) rotate(58)"><use href="#pawp" style="animation-delay:.75s"/></g>
+    <g transform="translate(236 58) rotate(64)"><use href="#pawp" style="animation-delay:1s"/></g>
+    <g transform="translate(292 36) rotate(54)"><use href="#pawp" style="animation-delay:1.25s"/></g>
+    <g transform="translate(348 40) rotate(60)"><use href="#pawp" style="animation-delay:1.5s"/></g>
+    <g transform="translate(402 18) rotate(50)"><use href="#pawp" style="animation-delay:1.75s"/></g>
+  </svg>
+</section>
+
+<!-- ================= КАК МЫ РАБОТАЕМ ================= -->
+<section class="sec" id="how">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><div class="micro">Как мы работаем</div><h2 class="sec-title">Четыре шага — <span>без лишнего стресса</span></h2></div>
+      <p>Наведите на карточку, чтобы увидеть, что происходит на каждом этапе.</p>
+    </div>
+    <div class="steps">
+      <article class="step">
+        <div class="art"><span class="n">01</span><span class="live">Запись</span>
+          <svg viewBox="0 0 120 100"><rect class="st" x="14" y="16" width="92" height="74" rx="12"/><path class="st" d="M14 36h92M38 8v16M82 8v16"/>
+            <circle class="cal-dot" cx="34" cy="52" r="4"/><circle class="cal-dot" cx="52" cy="52" r="4"/><circle class="cal-dot" cx="70" cy="52" r="4"/><circle class="cal-dot" cx="88" cy="52" r="4"/>
+            <circle class="cal-dot" cx="34" cy="72" r="4"/><circle class="cal-dot" cx="52" cy="72" r="4"/><circle class="cal-dot" cx="88" cy="72" r="4"/>
+            <rect class="cal-cell" x="60" y="62" width="20" height="20" rx="6"/><path class="cal-check" d="M64.5 72.5l4 4 7-8"/></svg></div>
+        <h3>Запись</h3>
+        <p>Онлайн, по телефону или в мессенджере. Подберём врача и удобное время.</p>
+      </article>
+      <article class="step">
+        <div class="art"><span class="n">02</span><span class="live">Осмотр</span>
+          <svg viewBox="0 0 120 100"><path class="st" d="M30 10v22a18 18 0 0 0 36 0V10"/><path class="st" d="M48 50v14a18 18 0 0 0 36 0v-6"/>
+            <g class="steth-bell"><circle class="st b" cx="84" cy="50" r="9"/><circle cx="84" cy="50" r="3" fill="var(--blue)"/></g>
+            <path class="steth-ecg" d="M6 88h20l5-10 6 18 6-26 6 22 4-4h67"/></svg></div>
+        <h3>Осмотр</h3>
+        <p>Без спешки: расспросим, осмотрим, измерим температуру и послушаем сердце.</p>
+      </article>
+      <article class="step">
+        <div class="art"><span class="n">03</span><span class="live">Диагностика</span>
+          <svg viewBox="0 0 120 100"><defs><linearGradient id="scanG" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="var(--blue)" stop-opacity="0"/><stop offset="1" stop-color="var(--blue)" stop-opacity=".35"/></linearGradient></defs>
+            <rect class="st" x="16" y="8" width="88" height="84" rx="14"/>
+            <g><ellipse class="st" cx="60" cy="62" rx="14" ry="11"/><ellipse class="st" cx="40" cy="44" rx="5" ry="7"/><ellipse class="st" cx="53" cy="34" rx="5" ry="7"/><ellipse class="st" cx="67" cy="34" rx="5" ry="7"/><ellipse class="st" cx="80" cy="44" rx="5" ry="7"/></g>
+            <rect class="scan" x="18" y="10" width="84" height="16"/><line class="scan-line" x1="18" y1="26" x2="102" y2="26"/>
+            <circle class="blip" cx="56" cy="60" r="2.6"/><circle class="blip" cx="66" cy="65" r="2.6"/><circle class="blip" cx="53" cy="36" r="2.6"/></svg></div>
+        <h3>Диагностика</h3>
+        <p>УЗИ и анализы прямо в клинике — без поездок в сторонние лаборатории.</p>
+      </article>
+      <article class="step">
+        <div class="art"><span class="n">04</span><span class="live">Лечение</span>
+          <svg viewBox="0 0 120 100"><path class="hrt" d="M44 72S20 58 20 42a12 12 0 0 1 24-5 12 12 0 0 1 24 5c0 16-24 30-24 30z"/>
+            <g class="msg"><path class="st b" d="M66 14h40a8 8 0 0 1 8 8v20a8 8 0 0 1-8 8H82l-10 9v-9h-6a8 8 0 0 1-8-8V22a8 8 0 0 1 8-8z" fill="var(--card)"/><path class="st b" d="M76 32l6 6 12-12"/></g>
+            <path class="st" d="M70 84h40M78 92h24"/></svg></div>
+        <h3>Лечение и контроль</h3>
+        <p>Расписываем лечение, объясняем, что делать дома, и остаёмся на связи.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= УСЛУГИ И ЦЕНЫ ================= -->
+<section class="sec price-sec" id="prices">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><div class="micro">Услуги и цены</div><h2 class="sec-title">Прозрачный <span>прайс</span></h2></div>
+      <p>Шесть направлений и больше 100 услуг. Найдите нужную — или выберите раздел.</p>
+    </div>
+    <div class="search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+      <input id="q" type="search" placeholder="Например: УЗИ почек, когти, капельница" aria-label="Поиск по услугам" autocomplete="off">
+      <span class="count micro" id="qCount"></span>
+    </div>
+    <div class="results" id="results" aria-live="polite"></div>
+    <div class="svc">
+      <div class="tabs" role="tablist" id="tabs" aria-label="Направления"></div>
+      <div class="panel" role="tabpanel" id="panel"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= О НАС ================= -->
+<section class="sec" id="about">
+  <div class="wrap">
+    <div class="about">
+      <div class="about-text">
+        <div class="sec-head" style="margin-bottom:28px"><div><div class="micro">О нас</div><h2 class="sec-title">Команда, которая <span>любит животных</span></h2></div></div>
+        <p class="big-p">У нас работают не просто специалисты, а люди, которые искренне любят животных.</p>
+        <p>Каждый врач — с профильным образованием и регулярно учится новому. Мы спокойно объясняем диагноз, развеиваем тревоги и помогаем с уходом дома. Чтобы питомец чувствовал себя в безопасности, а вы — уверенно в своём выборе.</p>
+        <div class="stats">
+          <div class="stat"><b data-count="6">6</b><span>направлений помощи</span></div>
+          <div class="stat"><b data-count="100" data-suffix="+">100+</b><span>услуг в прайсе</span></div>
+          <div class="stat"><b>10–21</b><span>ежедневно, без выходных</span></div>
+          <div class="stat"><b data-count="5" data-dec="1">5,0</b><span>рейтинг на Яндекс Картах</span></div>
+        </div>
+      </div>
+      <figure class="team-photo" style="margin:0">
+        <img id="teamImg" src="https://xn--b1adccnv1c.com/wp-content/uploads/2026/02/vrachi-veterinarnoj-kliniki-medivet-v-petergofe-specialisty-po-lecheniyu-koshek-i-sobak.webp" alt="Врачи ветеринарной клиники МедиВет">
+        <figcaption class="cap"><b>Команда МедиВет</b><span>Терапевты, дерматолог, специалист УЗИ и ассистенты</span></figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="gallery" aria-label="Фото клиники">
+    <div class="g-track" id="gTrack"></div>
+  </div>
+</section>
+
+<!-- ================= ОТЗЫВЫ ================= -->
+<section class="sec" id="reviews" style="background:var(--bg-2)">
+  <div class="wrap revs">
+    <div>
+      <div class="sec-head" style="margin-bottom:24px"><div><div class="micro">Отзывы</div><h2 class="sec-title">Нам <span>доверяют</span></h2></div></div>
+      <div class="score" id="score">5,0</div>
+      <div class="score-stars">★★★★★</div>
+      <div class="ya-sum">
+        <span class="ya"><svg viewBox="0 0 12 14" aria-hidden="true"><path d="M6 0a5.5 5.5 0 0 0-5.5 5.5C.5 9.6 6 14 6 14s5.5-4.4 5.5-8.5A5.5 5.5 0 0 0 6 0z" fill="#fc3f1d"/><circle cx="6" cy="5.5" r="2" fill="#fff"/></svg>Яндекс Карты</span>
+        <span class="muted" style="font-size:14px">87 оценок · 56 отзывов</span>
+      </div>
+      <span class="award"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M7 4h10v5a5 5 0 0 1-10 0zM7 6H4a3 3 0 0 0 3 4M17 6h3a3 3 0 0 1-3 4M12 14v4M8 21h8M9 18h6"/></svg>Хорошее место 2026</span>
+      <div class="rev-nav">
+        <button class="circ" id="prevR" type="button" aria-label="Предыдущий отзыв"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 12H5M11 6l-6 6 6 6"/></svg></button>
+        <button class="circ" id="nextR" type="button" aria-label="Следующий отзыв"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12h15M13 6l6 6-6 6"/></svg></button>
+        <span class="rev-count" id="revCount" style="align-self:center"></span>
+      </div>
+      <a class="all-revs" href="https://yandex.ru/maps/org/medivet/14650133315/reviews/" target="_blank" rel="noopener">Все отзывы на Яндекс Картах ↗</a>
+    </div>
+    <!-- Отзывы с Яндекс Карт (сокращены, смысл и слова авторов сохранены). Источник: yandex.ru/maps/org/medivet/14650133315/reviews -->
+    <div class="stack" id="stack"></div>
+  </div>
+</section>
+
+<!-- ================= КОНТАКТЫ ================= -->
+<section class="sec" id="contacts">
+  <div class="wrap">
+    <div class="sec-head"><div><div class="micro">Контакты</div><h2 class="sec-title">Ждём вас <span>на Чичеринской</span></h2></div>
+      <p>Записывайтесь заранее — или приезжайте сразу, если случай срочный.</p></div>
+    <div class="contacts">
+      <iframe id="map" title="Карта: МедиВет, Петергоф, Чичеринская улица, 2" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.openstreetmap.org/export/embed.html?bbox=29.8431%2C59.8678%2C29.8551%2C59.8734&amp;layer=mapnik&amp;marker=59.870628%2C29.849085"></iframe>
+      <div class="c-panel glass">
+        <svg class="pet sleep-cat" viewBox="0 0 70 46" aria-hidden="true">
+          <text class="z" x="48" y="14">z</text><text class="z" x="54" y="10">z</text><text class="z" x="60" y="6">z</text>
+          <g class="body"><path class="ln fl" d="M8 44c-4-10 2-22 16-24 14-2 26 4 28 14 1 6-3 10-10 10z"/>
+            <path class="ln fl" d="M10 30l-2-9 7 5M24 22l3-8 4 8"/><path class="ln" d="M14 32c2 1 4 1 6 0M23 31c2 1 4 1 6 0"/>
+            <path class="ln" d="M42 44c8 0 16-2 16-8 0-4-4-5-7-3"/></g>
+        </svg>
+        <div class="micro muted">Ветеринарная клиника</div>
+        <h3>МедиВет</h3>
+        <div class="c-open"><i class="pulse ok" id="stDot2"></i><span id="stText2">Открыто до 21:00</span></div>
+        <ul class="sched" id="sched"></ul>
+        <div class="c-list">
+          <a href="https://yandex.ru/maps/?text=%D0%9F%D0%B5%D1%82%D0%B5%D1%80%D0%B3%D0%BE%D1%84%2C%20%D0%A7%D0%B8%D1%87%D0%B5%D1%80%D0%B8%D0%BD%D1%81%D0%BA%D0%B0%D1%8F%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%2C%202" target="_blank" rel="noopener"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span><span>Петергоф, Чичеринская ул., 2<small>Санкт-Петербург</small></span></a>
+          <a href="tel:+79313668882"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></span><span>+7 931 366-88-82<small>мобильный, WhatsApp, Telegram</small></span></a>
+          <a href="tel:+78129438882"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></span><span>+7 812 943-88-82<small>городской</small></span></a>
+          <a href="mailto:Medivet@bk.ru"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M4 7l8 6 8-6"/></svg></span><span>Medivet@bk.ru<small>почта</small></span></a>
+        </div>
+        <div class="socials">
+          <a href="https://vk.com/mediivet" target="_blank" rel="noopener" aria-label="ВКонтакте"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.8 17.5c-5.5 0-8.6-3.8-8.8-10h2.8c.1 4.6 2.1 6.5 3.7 6.9V7.5h2.6v3.9c1.6-.2 3.3-2 3.8-3.9h2.6c-.4 2.4-2.2 4.2-3.4 4.9 1.2.6 3.2 2.1 4 5.1h-2.9c-.6-1.9-2.1-3.4-4.1-3.6v3.6h-.3z"/></svg></a>
+          <a href="https://t.me/medivetvet" target="_blank" rel="noopener" aria-label="Telegram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M21 4L3 11l6 2 2 6 3-4 5 4z"/><path d="M9 13l8-6"/></svg></a>
+          <a href="https://wa.me/79313668882" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20l1.3-4A8 8 0 1 1 8 18.7z"/><path d="M9 9c0 3 3 6 6 6l1-1.5-2-1-1 1c-1-.5-2-1.5-2.5-2.5l1-1-1-2z"/></svg></a>
+        </div>
+        <div class="c-btns">
+          <button class="btn" type="button" data-book>Записаться</button>
+          <a class="btn ghost" href="https://yandex.ru/maps/?rtext=~%D0%9F%D0%B5%D1%82%D0%B5%D1%80%D0%B3%D0%BE%D1%84%2C%20%D0%A7%D0%B8%D1%87%D0%B5%D1%80%D0%B8%D0%BD%D1%81%D0%BA%D0%B0%D1%8F%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%2C%202" target="_blank" rel="noopener">Маршрут</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-top">
+      <a class="logo" href="#top" aria-label="МедиВет — наверх"><svg aria-hidden="true"><use href="#logo"/></svg></a>
+      <nav class="foot-links" aria-label="Ссылки"><a href="#how">Как мы работаем</a><a href="#prices">Цены</a><a href="#about">О нас</a><a href="#reviews">Отзывы</a><a href="#contacts">Контакты</a></nav>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 МедиВет · [ООО/ИП, ИНН] · Лицензия [НОМЕР ЛИЦЕНЗИИ]</span>
+      <span>Цены не являются публичной офертой. Итоговую стоимость определяет врач после осмотра.</span>
+      <a href="#" onclick="return false" style="color:inherit">Политика конфиденциальности</a>
+    </div>
+  </div>
+  <div class="demo-line">Демо-сайт. Данные взяты с сайта клиники для примера</div>
+</footer>
+
+<div class="mbar glass" id="mbar">
+  <a class="btn red" href="tel:+79313668882"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Позвонить</a>
+  <button class="btn" type="button" data-book>Записаться</button>
+</div>
+
+<!-- ================= ОКНО ЗАПИСИ ================= -->
+<dialog class="book" id="bookDlg" aria-labelledby="bkTitle">
+  <div class="bk">
+    <div class="bk-head">
+      <div><div class="micro muted">Онлайн-запись</div><h2 id="bkTitle">Запись на приём</h2></div>
+      <button class="x" type="button" id="bkClose" aria-label="Закрыть"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    </div>
+    <form id="bkForm" novalidate>
+      <div class="q"><div class="q-h">Кто пациент?</div><div class="chips" id="bkPet"></div></div>
+      <div class="q"><div class="q-h">Направление <small>можно уточнить у администратора</small></div><div class="chips" id="bkDir"></div></div>
+      <div class="q"><div class="q-h">День <small id="bkMonth"></small></div><div class="days" id="bkDays"></div></div>
+      <div class="q"><div class="q-h">Время <small>зачёркнуто — занято</small></div><div class="chips" id="bkTimes"></div></div>
+      <div class="q">
+        <div class="fields">
+          <div class="fld"><label for="fPet">Кличка</label><input id="fPet" autocomplete="off" placeholder="Плюша"></div>
+          <div class="fld"><label for="fName">Ваше имя</label><input id="fName" autocomplete="given-name" placeholder="Анна" required></div>
+          <div class="fld full"><label for="fPhone">Телефон</label><input id="fPhone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 (___) ___-__-__" required></div>
+          <div class="fld full"><label for="fNote">Что беспокоит</label><textarea id="fNote" placeholder="Например: вялый, плохо ест второй день"></textarea></div>
+        </div>
+        <label class="consent" id="consentL"><input type="checkbox" id="fConsent"><span>Согласен на обработку персональных данных и с <a href="#" onclick="return false">политикой конфиденциальности</a></span></label>
+        <button class="btn full" type="submit">Отправить заявку</button>
+        <p class="note" style="text-align:center">Если питомцу плохо прямо сейчас — <a href="tel:+79313668882">позвоните</a>, так быстрее.</p>
+      </div>
+    </form>
+    <div class="done" id="bkDone" role="status">
+      <svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="46"/><path d="M30 52l13 13 27-29"/></svg>
+      <h3>Заявка принята</h3>
+      <p id="bkDoneText"></p>
+      <button class="btn ghost" type="button" id="bkOk">Готово</button>
+    </div>
+  </div>
+</dialog>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script>
+(function(){
+'use strict';
+const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
+const root=document.documentElement;
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const fine=matchMedia('(pointer:fine)').matches;
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const fmt=n=>n.toLocaleString('ru-RU').replace(/ /g,' ');
+const IMG='https://xn--b1adccnv1c.com/wp-content/uploads/2026/02/'; // фото с сайта клиники; для боевой версии взять оригиналы у клиники
+
+/* ---------- Тема ---------- */
+try{const t=localStorage.getItem('mv-theme');if(t)root.dataset.theme=t}catch(e){}
+$('#themeBtn').addEventListener('click',()=>{
+  const dark=root.dataset.theme?root.dataset.theme==='dark':matchMedia('(prefers-color-scheme: dark)').matches;
+  root.dataset.theme=dark?'light':'dark'; try{localStorage.setItem('mv-theme',root.dataset.theme)}catch(e){}
+});
+
+/* ---------- Открыто сейчас? (время Москвы) ---------- */
+const OPEN=10, CLOSE=21, DAYS=['Пн','Вт','Ср','Чт','Пт','Сб','Вс'];
+function msk(){
+  const p=Object.fromEntries(new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Moscow',hour:'2-digit',minute:'2-digit',weekday:'short',hour12:false}).formatToParts(new Date()).map(x=>[x.type,x.value]));
+  return {h:+p.hour%24+(+p.minute)/60, d:['Mon','Tue','Wed','Thu','Fri','Sat','Sun'].indexOf(p.weekday)};
+}
+function status(){
+  const {h,d}=msk(), open=h>=OPEN&&h<CLOSE;
+  const txt=open?`Открыто до ${CLOSE}:00`:(h<OPEN?`Закрыто · откроемся в ${OPEN}:00`:`Закрыто · завтра с ${OPEN}:00`);
+  [['#stDot','#stText'],['#stDot2','#stText2']].forEach(([a,b])=>{$(a).classList.toggle('ok',open);$(b).textContent=txt});
+  $('#sched').innerHTML=DAYS.map((n,i)=>`<li class="${i===d?'today':''}"><b>${n}</b>10–21</li>`).join('');
+}
+status(); setInterval(status,60000);
+
+/* ---------- Карта: на десктопе метка правее, чтобы её не закрывала панель ---------- */
+if(matchMedia('(min-width:861px)').matches)
+  $('#map').src='https://www.openstreetmap.org/export/embed.html?bbox=29.8335%2C59.8679%2C29.8575%2C59.8733&layer=mapnik&marker=59.870628%2C29.849085';
+
+/* ---------- Нижняя панель на телефоне (шапка не закреплена) ---------- */
+const mbar=$('#mbar');
+function onScroll(){ mbar.classList.toggle('on',scrollY>innerHeight*.6); }
+addEventListener('scroll',onScroll,{passive:true}); onScroll();
+
+/* ---------- Фото в арке: лёгкий параллакс за мышью ---------- */
+if(fine&&!reduce){
+  const v=$('#heroVisual'), img=$('#heroImg');
+  v.addEventListener('pointermove',e=>{const r=v.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+    img.style.transform=`translate(${x*-14}px,${y*-14-20}px) scale(1.04)`;});
+  v.addEventListener('pointerleave',()=>img.style.transform='');
+}
+
+
+/* ---------- Следы лап проявляются, когда блок на экране ---------- */
+new IntersectionObserver(es=>es.forEach(e=>e.target.classList.toggle('on',e.isIntersecting)),{threshold:.3}).observe($('#paws'));
+
+/* ---------- Карточки «как мы работаем» на телефоне играют сами ---------- */
+if(!fine){
+  const io=new IntersectionObserver(es=>es.forEach(e=>e.target.classList.toggle('play',e.isIntersecting)),{threshold:.6});
+  $$('.step').forEach(s=>io.observe(s));
+}
+
+/* ---------- Прайс ---------- */
+const ICONS={
+  online:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>',
+  uzi:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 18a8 8 0 0 1 16 0"/><path d="M12 18l4-6"/><circle cx="12" cy="18" r="1.5"/></svg>',
+  derm:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5M9 11h4M11 9v4"/></svg>',
+  proc:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 3l3 3M16 5l3 3-9 9H7v-3zM5 19l2-2"/></svg>',
+  stac:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 18V7M3 13h18v5M21 13a3 3 0 0 0-3-3h-7v3"/><circle cx="7" cy="11" r="2"/></svg>',
+  lab:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3"/><path d="M7.5 15h9"/></svg>'
+};
+const CATS=[
+ {id:'online',name:'Онлайн-консультация',dir:'Онлайн-консультация',img:'online-konsultacia-petergof-medivet.webp',desc:'Расшифруем анализы, подскажем по уходу и ответим на срочные вопросы — без стресса от поездки.',items:[
+  ['Терапевт, первичная онлайн-консультация',1200],['Терапевт, повторная онлайн-консультация',800],['Дерматолог, первичная онлайн-консультация',2500],['Дерматолог, повторная онлайн-консультация',1500]]},
+ {id:'uzi',name:'УЗИ-диагностика',dir:'УЗИ',img:'uzi-zhivotnyh-petergof-medivet.webp',desc:'Исследования экспертного класса: точный диагноз и выявление скрытых проблем — безболезненно для питомца.',items:[
+  ['УЗИ брюшной полости',2500],['УЗИ сердца (скрининг)',2000],['УЗИ почек и мочевого пузыря',2000],['УЗИ грудной клетки',2000],['УЗИ щитовидной железы',2000],['УЗИ желудочно-кишечного тракта',2000],
+  ['УЗИ половой системы самок, определение беременности',2000],['УЗИ половой системы самцов',2000],['TFAST — грудная полость при травме',2000],['AFAST — брюшная полость при травме',2000],
+  ['УЗИ почек',1700],['УЗИ поджелудочной железы',1700],['УЗИ надпочечников',1700],['УЗИ простаты и семенников',1700],['УЗИ простаты и мочевого пузыря',1700],['УЗИ на эктопию мочеточников',2000],
+  ['УЗИ печени',1300],['УЗИ желчного пузыря',1300],['УЗИ селезёнки',1300],['УЗИ простаты',1300],['УЗИ мочевого пузыря',1300],['УЗИ образования',1500],
+  ['Свободная жидкость в брюшной или грудной полости',1000],['Проверка перистальтики кишечника',1000],['Проверка корма в ЖКТ перед анестезией',1000],
+  ['Торакоцентез для цитологии под УЗИ',1500],['Торакоцентез с удалением жидкости под УЗИ',5000],['Лапароцентез для цитологии под УЗИ',1500],
+  ['Лапароцентез с удалением жидкости, до 500 мл',2500],['Лапароцентез, свыше 500 мл',5000],['Лапароцентез, свыше 5 литров',10000],
+  ['Холецистоцентез под УЗИ',4500],['Пиелоцентез под УЗИ',4500],['Цистоцентез, отбор мочи под УЗИ',1000],
+  ['Цистоцентез с опорожнением, до 10 кг',2000],['Цистоцентез с опорожнением, собаки до 25 кг',3000],['Цистоцентез с опорожнением, собаки свыше 25 кг',5000]]},
+ {id:'derm',name:'Дерматология',dir:'Дерматолог',img:'dermatolog-dlya-sobak-i-koshek.webp',desc:'Лечим аллергии, зуд и кожные инфекции — возвращаем здоровую шерсть и спокойную жизнь.',items:[
+  ['Первичный приём дерматолога',3000],['Повторный приём дерматолога',2000],['Трихоскопия, 1 локализация',800],['Микроскопия на отодектоз (ушной клещ)',600],
+  ['Поверхностный соскоб на эктопаразитов, 1–3 локализации',1000],['Глубокий соскоб на демодекоз, до 10 локализаций',3000],['Цитология из ушей, 2 локализации',1500],
+  ['Цитология мазка-отпечатка с кожи',1500],['Тонкоигольная биопсия кожных образований',1500],['Чистка ушей лосьоном',800]]},
+ {id:'proc',name:'Процедурный кабинет',dir:'Процедуры',img:'procidurni-kabinet-petergof-medivet.webp',desc:'Вакцинация, капельницы, обработка швов и забор анализов — опытными руками и в спокойной обстановке.',items:[
+  ['Инъекция (в/м, п/к, в/в в катетер)',300],['Инъекция по назначению сторонней клиники',500],['Капельница до 3 часов',1800],['Капельница свыше 3 часов',5000],
+  ['Установка внутривенного катетера',1000],['Снятие катетера',300],['Катетер и забор крови',1200],['Забор крови на анализ',800],['Забор материала (мазки, соскобы)',400],
+  ['Установка инфузионной помпы',1500],['Глюкоза крови, экспресс-тест',500],['Измерение давления',800],['Дача таблеток и лекарств',300],['Ректальное введение препаратов',300],
+  ['Фиксация агрессивного животного',1500],['Удаление клеща, до 5 шт.',500],['Удаление клещей, до 20 шт.',1000],['Удаление клещей, свыше 20 шт.',3000],
+  ['Приготовление препарата по рецепту',400],['Стрижка когтей, кошки и собаки до 10 кг',500],['Стрижка когтей, собаки свыше 10 кг',800],
+  ['Стрижка колтунов кошке без седации',500],['Стрижка кошки «под льва» под наркозом',7000],['Чистка параанальных желёз',800],['Вскрытие абсцесса параанальной железы',2000],
+  ['Вскрытие абсцесса, категория 1',1000],['Вскрытие абсцесса, категория 2',2000],['Вскрытие абсцесса, категория 3',4000],
+  ['Обработка швов',300],['Снятие швов',700],['Наложение повязки',1200],['Обработка раны, категория 1',500],['Обработка раны, категория 2',1000],['Обработка раны, категория 3',2000],
+  ['Спринцевание влагалища',500],['Обработка эзофагостомы',500],['Промывание носа, категория 1',300],['Промывание носа, категория 2',1000],
+  ['Зондирование и промывание желудка, до 10 кг',7000],['Зондирование желудка, до 25 кг',10000],['Зондирование желудка, до 50 кг',15000],['Зондирование желудка, свыше 50 кг',20000],
+  ['Носо-пищеводный зонд',1500],['Катетеризация кота',1500],['Катетеризация кобеля',2500],['Катетеризация суки',3500],['Урогидропульсия кота',1500],['Урогидропульсия кобеля',2000],
+  ['Мануальное отведение мочи',800],['Переливание крови',4000],['Очистительная клизма, до 10 кг',7000],['Очистительная клизма, до 25 кг',15000],['Очистительная клизма, свыше 25 кг',25000],
+  ['Инфильтрационная блокада',700],['Эвтаназия, кошка и собака до 10 кг',5000],['Эвтаназия, собака до 25 кг',8000],['Эвтаназия, собака свыше 25 кг',12000]]},
+ {id:'stac',name:'Стационар и реанимация',dir:'Стационар',img:'stacionar-vetklinika-petergof.webp',desc:'Наблюдение врачей и уход за тяжёлыми пациентами в индивидуальных боксах.',items:[
+  ['Дневной стационар, категория 1',3000],['Дневной стационар, категория 2',5000],['Дневной стационар, категория 3',8000],['Реанимация и интенсивная терапия, 1 час',1000],
+  ['Анестезиологическое сопровождение, категория 1',1000],['Анестезиологическое сопровождение, категория 2',3000],['Анестезиологическое сопровождение, категория 3',5000]]},
+ {id:'lab',name:'Лаборатория',dir:'Анализы',img:'laboratornaya-diagnostika-analizy.webp',desc:'Кровь, моча, соскобы — анализы прямо в клинике для быстрой оценки здоровья.',items:[],onlyPhone:true}
+];
+const ALL=CATS.flatMap(c=>c.items.map(([n,p])=>({n,p,c})));
+const tabs=$('#tabs'), panel=$('#panel');
+let cur=CATS[1], expanded=false;
+tabs.innerHTML=CATS.map(c=>`<button class="tab" role="tab" type="button" data-id="${c.id}" aria-selected="false"><span class="ti">${ICONS[c.id]}</span><span><b>${c.name}</b><small>${c.items.length?c.items.length+' '+plural(c.items.length,'услуга','услуги','услуг')+' · от '+fmt(Math.min(...c.items.map(i=>i[1])))+' ₽':'по телефону'}</small></span><span class="go">→</span></button>`).join('');
+function plural(n,a,b,c){n%=100;if(n>10&&n<20)return c;n%=10;return n===1?a:n>1&&n<5?b:c}
+function renderPanel(){
+  $$('.tab',tabs).forEach(t=>t.setAttribute('aria-selected',t.dataset.id===cur.id));
+  const list=[...cur.items].sort((a,b)=>b[1]-a[1]===0?0:0), show=expanded?list:list.slice(0,6);
+  panel.innerHTML=`<div class="panel-top"><div class="panel-img"><img src="${IMG+cur.img}" alt="${esc(cur.name)} в клинике МедиВет" loading="lazy"></div>
+    <div><h3>${esc(cur.name)}</h3><p>${esc(cur.desc)}</p><button class="btn" type="button" data-book="${esc(cur.dir)}">Записаться: ${esc(cur.dir.toLowerCase())} <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12h15M13 6l6 6-6 6"/></svg></button></div></div>
+    ${cur.onlyPhone?`<div class="row"><span>Виды анализов и стоимость</span><b><a href="tel:+79313668882">уточнить по телефону</a></b></div>`:
+    `<ul class="prices">${show.map(([n,p],i)=>`<li class="row" style="animation-delay:${i*35}ms"><span>${esc(n)}</span><b>${fmt(p)} ₽</b></li>`).join('')}</ul>
+     ${list.length>6?`<div class="more"><span class="muted">Показано ${show.length} из ${list.length}</span><button class="link-btn" type="button" id="moreBtn">${expanded?'Свернуть':'Весь раздел →'}</button></div>`:''}`}
+    <p class="note">Стоимость многих процедур зависит от веса животного. Итоговую цену врач назовёт после осмотра.</p>`;
+  const mb=$('#moreBtn',panel); if(mb) mb.addEventListener('click',()=>{expanded=!expanded;renderPanel()});
+  if(window.gsap&&!reduce) gsap.from(panel.querySelector('.panel-top'),{y:16,duration:.6,ease:'expo.out',clearProps:'transform'});
+}
+$$('.tab',tabs).forEach(t=>t.addEventListener('click',()=>{cur=CATS.find(c=>c.id===t.dataset.id);expanded=false;renderPanel()}));
+renderPanel();
+
+const q=$('#q'), results=$('#results'), qCount=$('#qCount');
+const norm=s=>s.toLowerCase().replace(/ё/g,'е');
+q.addEventListener('input',()=>{
+  const v=norm(q.value.trim());
+  if(v.length<2){results.classList.remove('on');qCount.textContent='';return}
+  const words=v.split(/\s+/);
+  const hits=ALL.filter(x=>{const n=norm(x.n+' '+x.c.name);return words.every(w=>n.includes(w))});
+  qCount.textContent=hits.length?hits.length+' найдено':'';
+  const hl=s=>{let out=esc(s);words.forEach(w=>{const i=norm(out).indexOf(w);if(i>=0)out=out.slice(0,i)+'<mark>'+out.slice(i,i+w.length)+'</mark>'+out.slice(i+w.length)});return out};
+  results.innerHTML=hits.length?hits.slice(0,40).map(x=>`<div class="row"><span><small>${esc(x.c.name)}</small>${hl(x.n)}</span><b>${fmt(x.p)} ₽</b></div>`).join(''):
+    `<div class="empty">Не нашли такую услугу. Позвоните — <a href="tel:+79313668882">+7 931 366-88-82</a>, подскажем.</div>`;
+  results.classList.add('on');
+});
+
+/* ---------- Галерея ---------- */
+const GAL=[['berezhnyj-priem-kotenka-veterinarom-v-klinike-medivet.webp','Бережный приём котёнка'],['vzvheshivanie-sobaki-v-veterinarnoj-klinike-v-petergofe-medivet.webp','Взвешивание — с этого начинается приём'],
+ ['provedenie-uzi-diagnostiki-sobake-v-klinike-medivet.webp','УЗИ-диагностика'],['malenkie-pacienty-v-stacionare-medivet.webp','Маленькие пациенты под большим присмотром'],
+ ['magiya-chernyh-kotov-v-medivet-professionalnaya-pomoshch.webp','Мы не верим в приметы — мы верим в медицину'],['sobstvennaya-laboratoriya-veterinarnoj-kliniki-v-petergofe.webp','Своя лаборатория'],
+ ['lyubov-nashe-glavnoe-lekarstvo-nahodim-podhod-k-kazhdomu.webp','Любовь — наше главное лекарство'],['vrach-veterinarnoj-kliniki-v-petergofe-s-dovolnymi-pacientami.webp','Врач с довольными пациентами'],
+ ['ozhidanie-v-komforte-v-klinike-medivet.webp','Уютная зона ожидания'],['schastlivyj-pitomec-posle-priema-v-veterinarnoj-klinike-v-petergofe.webp','Счастливый питомец после приёма']];
+const g=GAL.map(([f,c])=>`<figure class="g-item" style="margin:0"><img src="${IMG+f}" alt="${esc(c)}" loading="lazy"><figcaption>${esc(c)}</figcaption></figure>`).join('');
+$('#gTrack').innerHTML=g+g.replace(/alt="/g,'aria-hidden="true" alt="');
+
+/* ---------- Отзывы с Яндекс Карт: колода карточек ---------- */
+const REVIEWS=[
+ ['Анна Н.','7 декабря 2025','Нашего котика приняли сразу, без записи, экстренно. Врач задержалась с нами в клинике, пока котик лежал под капельницей. Огромная благодарность!'],
+ ['Наталья А.','28 декабря 2025','Пришли на УЗИ с подозрением на инородное тело. Мне предложили дать собаке шанс и остаться в стационаре на капельнице — ситуацию удалось решить без операции. Потрясающие специалисты и люди с большим сердцем!'],
+ ['Дарина Р.','9 июня','Огромная благодарность врачу Дарье Сергеевне за профессионализм и чуткое отношение к моим питомцам. В клинике спокойная и уютная атмосфера, чистота, вежливые администраторы.'],
+ ['Ирина Н.','17 октября','Приносила свою шиншиллу на УЗИ — даже с таким нежным животным нашли подход. Все анализы и чеки предоставляют. Оценила это место за честность и доброту к животным.'],
+ ['Екатерина Ш.','31 мая','Хочу отметить высокий профессионализм врачей и внимание к деталям. Врачи всегда на связи — это очень важно, ведь питомцы для нас как дети.'],
+ ['Ольга Г.','4 июня 2025','Профессионалы своего дела, нисколько не накручивают по деньгам, всё очень прозрачно — по факту осмотра животного. Теперь мой питомец абсолютно здоров!'],
+ ['Регина К.','22 августа 2025','Обратились экстренно, из-за возможного перелома лапы у котика. Врачи очень хорошие, вежливые, профессиональные, сочувствующие! Цены тоже очень приемлемые.']
+];
+const YA_PIN='<svg viewBox="0 0 12 14" aria-hidden="true"><path d="M6 0a5.5 5.5 0 0 0-5.5 5.5C.5 9.6 6 14 6 14s5.5-4.4 5.5-8.5A5.5 5.5 0 0 0 6 0z" fill="#fc3f1d"/><circle cx="6" cy="5.5" r="2" fill="#fff"/></svg>';
+$('#stack').innerHTML=REVIEWS.map(([n,d,t])=>`<article class="rcard"><div class="top"><span class="stars">★★★★★</span><span class="ya">${YA_PIN}Яндекс Карты</span></div>
+  <blockquote>${esc(t)}</blockquote><footer><span class="av">${esc(n[0])}</span><div><b>${esc(n)}</b><br><span>${esc(d)}</span></div></footer></article>`).join('');
+const cards=$$('.rcard'); let ri=0, rTimer;
+function layoutCards(){cards.forEach((c,i)=>c.dataset.pos=String((i-ri+cards.length)%cards.length));$('#revCount').textContent=`${ri+1} / ${cards.length}`}
+function nextR(dir=1){
+  const front=cards[ri];
+  if(dir>0){front.dataset.pos='out';setTimeout(()=>{ri=(ri+1)%cards.length;layoutCards()},reduce?0:350)}
+  else{ri=(ri-1+cards.length)%cards.length;layoutCards()}
+}
+layoutCards();
+$('#nextR').addEventListener('click',()=>{nextR(1);restart()});
+$('#prevR').addEventListener('click',()=>{nextR(-1);restart()});
+let sx=null; const stack=$('#stack');
+stack.addEventListener('pointerdown',e=>sx=e.clientX);
+stack.addEventListener('pointerup',e=>{if(sx!==null&&Math.abs(e.clientX-sx)>40){nextR(e.clientX<sx?1:-1);restart()}sx=null});
+function restart(){clearInterval(rTimer);if(!reduce)rTimer=setInterval(()=>nextR(1),6500)}
+restart(); stack.addEventListener('pointerenter',()=>clearInterval(rTimer)); stack.addEventListener('pointerleave',restart);
+
+/* ---------- Запись ---------- */
+const dlg=$('#bookDlg');
+const PETS=['Кошка','Собака','Другое'], DIRS=['Терапевт','УЗИ','Дерматолог','Процедуры','Анализы','Стационар','Онлайн-консультация'];
+const SLOTS=['10:00','11:00','12:00','13:00','14:00','15:00','16:00','17:00','18:00','19:00','20:00'];
+const B={pet:'Кошка',dir:'Терапевт',day:0,time:null};
+const PET_ICON={
+  'Кошка':'<svg class="pi" viewBox="0 0 24 24"><path d="M5 10L4 3l5 4h6l5-4-1 7c1 5-2 10-7 10s-8-5-7-10z"/><path d="M9.5 12.5v.5M14.5 12.5v.5M11 16h2"/></svg>',
+  'Собака':'<svg class="pi" viewBox="0 0 24 24"><path d="M6 9C4 9 2 7 3 4c2-1 4 0 5 2M18 9c2 0 4-2 3-5-2-1-4 0-5 2"/><path d="M7 7c3-2 7-2 10 0 2 2 2 6 1 9-1 3-3 5-6 5s-5-2-6-5c-1-3-1-7 1-9z"/><path d="M10 12v.5M14 12v.5M11 16h2l-1 1.2z"/></svg>',
+  'Другое':'<svg class="pi" viewBox="0 0 24 24"><circle cx="12" cy="7" r="4"/><path d="M16 6.5c2 0 3 2 1.5 3.5L15.5 9"/><path d="M9 10c-2 3-2 7 0 10 2 2 5 1 6-1 1-3 0-7-2-9"/><path d="M10 20l-2 3M13 21l-1 2"/><circle cx="13" cy="6.5" r=".6"/></svg>'
+};
+const chipGroup=(el,list,key)=>{el.innerHTML=list.map(x=>`<button type="button" class="c" data-v="${x}" aria-pressed="${x===B[key]}">${key==='pet'&&PET_ICON[x]?PET_ICON[x]:''}${x}</button>`).join('');
+  $$('.c',el).forEach(b=>b.addEventListener('click',()=>{B[key]=b.dataset.v;$$('.c',el).forEach(x=>x.setAttribute('aria-pressed',x===b))}))};
+const hash=s=>[...s].reduce((a,c)=>(a*31+c.charCodeAt(0))>>>0,7);
+const dayList=[...Array(10)].map((_,i)=>{const d=new Date();d.setHours(0,0,0,0);d.setDate(d.getDate()+i);return d});
+function renderDays(){
+  $('#bkDays').innerHTML=dayList.map((d,i)=>`<button type="button" class="d" data-i="${i}" aria-pressed="${i===B.day}"><small>${i===0?'сегодня':i===1?'завтра':d.toLocaleDateString('ru-RU',{weekday:'short'})}</small><b>${d.getDate()}</b></button>`).join('');
+  $$('.d').forEach(b=>b.addEventListener('click',()=>{B.day=+b.dataset.i;$$('.d').forEach(x=>x.setAttribute('aria-pressed',x===b));renderTimes()}));
+}
+function renderTimes(){
+  const d=dayList[B.day], {h}=msk();
+  $('#bkMonth').textContent=d.toLocaleDateString('ru-RU',{month:'long'});
+  $('#bkTimes').innerHTML=SLOTS.map(t=>{const past=B.day===0&&parseInt(t)<=h;const busy=past||hash(d.toDateString()+t)%3===0;return `<button type="button" class="c" ${busy?'disabled':''} aria-pressed="false">${t}</button>`}).join('');
+  const free=$$('#bkTimes .c:not([disabled])');
+  B.time=free[0]?free[0].textContent:null; if(free[0]) free[0].setAttribute('aria-pressed','true');
+  if(!free.length) $('#bkTimes').insertAdjacentHTML('beforeend','<span class="muted" style="font-size:14px;padding:10px 0">На этот день мест нет — выберите другой</span>');
+  $$('#bkTimes .c').forEach(b=>b.addEventListener('click',()=>{B.time=b.textContent;$$('#bkTimes .c').forEach(x=>x.setAttribute('aria-pressed',x===b))}));
+}
+function openBook(dir){
+  if(dir&&DIRS.includes(dir)) B.dir=dir;
+  chipGroup($('#bkPet'),PETS,'pet'); chipGroup($('#bkDir'),DIRS,'dir'); renderDays(); renderTimes();
+  $('#bkForm').hidden=false; $('#bkDone').classList.remove('on');
+  dlg.showModal();
+}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-book]');if(b){e.preventDefault();openBook(b.dataset.book)}});
+$('#bkClose').addEventListener('click',()=>dlg.close());
+$('#bkOk').addEventListener('click',()=>dlg.close());
+dlg.addEventListener('click',e=>{if(e.target===dlg)dlg.close()});
+const phone=$('#fPhone');
+phone.addEventListener('input',()=>{
+  let d=phone.value.replace(/\D/g,'');if(!d){phone.value='';return}
+  if(d[0]==='8')d='7'+d.slice(1);if(d[0]!=='7')d='7'+d;d=d.slice(0,11);
+  const p=[d.slice(1,4),d.slice(4,7),d.slice(7,9),d.slice(9,11)];
+  phone.value='+7'+(p[0]?` (${p[0]}`:'')+(p[0].length===3?')':'')+(p[1]?' '+p[1]:'')+(p[2]?'-'+p[2]:'')+(p[3]?'-'+p[3]:'');
+});
+$('#bkForm').addEventListener('submit',e=>{
+  e.preventDefault();
+  const name=$('#fName'), ok1=name.value.trim().length>1, ok2=phone.value.replace(/\D/g,'').length===11, ok3=$('#fConsent').checked;
+  name.parentElement.classList.toggle('err',!ok1);phone.parentElement.classList.toggle('err',!ok2);$('#consentL').classList.toggle('err',!ok3);
+  if(!(ok1&&ok2&&ok3)){(!ok1?name:!ok2?phone:$('#fConsent')).focus();return}
+  const d=dayList[B.day].toLocaleDateString('ru-RU',{day:'numeric',month:'long',weekday:'long'}), pet=$('#fPet').value.trim();
+  $('#bkDoneText').innerHTML=`${esc(B.dir)} · ${esc(B.pet.toLowerCase())}${pet?' '+esc(pet):''}<br>${d}, ${B.time||'время уточним'}.<br><br>Администратор перезвонит для подтверждения. Это демо — на боевом сайте заявка сразу придёт в Telegram клиники.`;
+  $('#bkForm').hidden=true; $('#bkDone').classList.add('on'); $('#bkForm').reset();
+});
+
+/* ---------- GSAP ---------- */
+document.addEventListener('DOMContentLoaded',()=>{
+  if(reduce||!window.gsap||!window.ScrollTrigger) return;
+  gsap.registerPlugin(ScrollTrigger);
+  // вход: текст виден сразу, лишь мягко подъезжает
+  gsap.from('.status-row .tag, .eyebrow',{y:16,stagger:.08,duration:1,ease:'expo.out',clearProps:'transform'});
+  gsap.from('.big .ln',{yPercent:30,rotation:2,stagger:.12,duration:1.3,ease:'expo.out',clearProps:'transform'});
+  gsap.from('.lead, .cta-row, .emerg',{y:24,stagger:.08,duration:1.2,delay:.2,ease:'expo.out',clearProps:'transform'});
+  gsap.from('.arch',{scale:.9,y:40,duration:1.6,ease:'expo.out',clearProps:'transform'});
+  gsap.from('.chip',{scale:.6,stagger:.15,duration:1,delay:.5,ease:'back.out(1.8)',clearProps:'scale'});
+  // арка уезжает с параллаксом
+  gsap.to('.arch img',{yPercent:-8,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
+  gsap.from('.approach p',{y:30,duration:1.2,ease:'expo.out',clearProps:'transform',scrollTrigger:{trigger:'.approach',start:'top 85%'}});
+  // заголовки и карточки
+  $$('.sec-title').forEach(t=>gsap.from(t,{yPercent:30,duration:1.2,ease:'expo.out',scrollTrigger:{trigger:t,start:'top 90%'}}));
+  gsap.from('.step',{y:60,rotation:()=>gsap.utils.random(-2,2),stagger:.1,duration:1.2,ease:'expo.out',clearProps:'transform',scrollTrigger:{trigger:'.steps',start:'top 85%'}});
+  gsap.from('.tab',{x:-24,stagger:.05,duration:.9,ease:'expo.out',clearProps:'transform',scrollTrigger:{trigger:'#tabs',start:'top 85%'}});
+  gsap.from('.panel',{y:40,duration:1.2,ease:'expo.out',clearProps:'transform',scrollTrigger:{trigger:'.panel',start:'top 88%'}});
+  gsap.to('#teamImg',{yPercent:-10,ease:'none',scrollTrigger:{trigger:'.team-photo',start:'top bottom',end:'bottom top',scrub:true}});
+  gsap.from('.team-photo',{clipPath:'inset(12% 12% 12% 12% round 36px)',duration:1.6,ease:'expo.out',scrollTrigger:{trigger:'.team-photo',start:'top 85%'}});
+  gsap.from('.stat',{y:30,stagger:.08,duration:1,ease:'expo.out',clearProps:'transform',scrollTrigger:{trigger:'.stats',start:'top 90%'}});
+  // счётчики
+  $$('[data-count]').forEach(el=>{const to=+el.dataset.count,dec=+el.dataset.dec||0,suf=el.dataset.suffix||'',o={v:0};
+    ScrollTrigger.create({trigger:el,start:'top 92%',once:true,onEnter:()=>gsap.to(o,{v:to,duration:1.6,ease:'power2.out',onUpdate:()=>el.textContent=o.v.toFixed(dec).replace('.',',')+suf})})});
+  const sc={v:0};ScrollTrigger.create({trigger:'#score',start:'top 90%',once:true,onEnter:()=>gsap.to(sc,{v:5,duration:1.6,ease:'power2.out',onUpdate:()=>$('#score').textContent=sc.v.toFixed(1).replace('.',',')})});
+  gsap.from('.stack',{y:50,rotation:3,duration:1.3,ease:'expo.out',clearProps:'transform',scrollTrigger:{trigger:'.stack',start:'top 85%'}});
+  // карта раскрывается
+  gsap.from('.contacts',{clipPath:'inset(8% 6% 8% 6% round 60px)',duration:1.6,ease:'expo.out',scrollTrigger:{trigger:'.contacts',start:'top 85%'}});
+  gsap.from('.c-panel',{x:-40,duration:1.3,delay:.2,ease:'expo.out',clearProps:'transform',scrollTrigger:{trigger:'.contacts',start:'top 85%'}});
+  addEventListener('load',()=>ScrollTrigger.refresh());
+});
+})();
+</script>
+</body>
+</html>
